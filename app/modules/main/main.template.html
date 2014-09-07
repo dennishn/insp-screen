@@ -1,0 +1,9 @@
+<ul>
+  {{vm.feedsList[0]}}
+  <li ng-repeat="feedItem in vm.feedsList[0].entries">
+    <div ng-bind-html="feedItem.content"></div>
+
+  </li>
+  <!-- {{vm.feedsList[0].entries}} -->
+</ul>
+
