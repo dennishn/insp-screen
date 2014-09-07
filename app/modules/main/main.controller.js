@@ -25,7 +25,24 @@
       {title: 'FromUpNorth', url: 'http://www.fromupnorth.com/feed'}
     ];
 
-    vm.feedsList = Feeds.get(vm.feeds);
-    console.log(vm.feedsList)
+    // vm.feedsList = Feeds.get(vm.feeds);
+    // console.log(vm.feedsList)
+    vm.images = [];
+    console.log(vm.feeds.length)
+    Feeds.get(vm.feeds).then(function(data) {
+      // vm.images = data;
+      // console.log(data.length)
+      for(var i = 0; i<vm.feeds.length; i++) {
+        // console.log(data)
+      }
+      angular.forEach(data, function(feed, key) {
+        console.log(feed)
+        // angular.forEach(feed.entries, function(entry, index) {
+        //   vm.images.push( $(entry.content).find('img').eq(0).attr('src') );
+
+        // })
+      })
+
+    })
   }
 })();
