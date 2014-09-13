@@ -1,0 +1,17 @@
+html, body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.grid-content {
+  max-width: none;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  > ul {
+    margin: 0;
+  }
+}

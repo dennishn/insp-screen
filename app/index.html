@@ -8,6 +8,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="bower_components/animate.css/animate.css">
     <!-- endbuild -->
   </head>
   <body ng-app="inspScreenApp">
@@ -17,18 +18,7 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-        </ul>
-        <h3 class="text-muted">inspScreen</h3>
-      </div>
-
       <div ui-view=""></div>
-
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
     </div>
 
 
@@ -69,17 +59,35 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/get-style-property/get-style-property.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/eventie/eventie.js"></script>
+    <script src="bower_components/doc-ready/doc-ready.js"></script>
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="bower_components/matches-selector/matches-selector.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/outlayer.js"></script>
+    <script src="bower_components/masonry/masonry.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+    <script src="bower_components/angular-masonry/angular-masonry.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="config/app.js"></script>
+        <script src="common/uuid/uuid.module.js"></script>
+        <script src="common/uuid/uuid.factory.js"></script>
         <script src="modules/main/main.module.js"></script>
         <script src="modules/main/main.route.js"></script>
         <script src="modules/main/main.controller.js"></script>
-        <script src="models/feeds/feeds.module.js"></script>
-        <script src="models/feeds/feeds.service.js"></script>
-        <script src="models/feeds/feeds.factory.js"></script>
+        <script src="models/kimono/kimono.module.js"></script>
+        <script src="models/kimono/kimono.service.js"></script>
+        <script src="models/kimono/kimono.factory.js"></script>
+        <script src="models/dribbble/dribbble.module.js"></script>
+        <script src="models/dribbble/dribbble.service.js"></script>
+        <script src="models/dribbble/dribbble.factory.js"></script>
+        <script src="modules/feed-item/feeditem.directive.js"></script>
         <!-- endbuild -->
 </body>
 </html>

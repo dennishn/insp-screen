@@ -20,8 +20,18 @@
     'ngRoute',
     'ui.router',
     'mm.foundation',
-    'inspScreenApp.feeds',
+    'wu.masonry',
+    'uuid',
+    'inspScreenApp.kimono',
+    'inspScreenApp.dribbble',
     'inspScreenApp.main'
 
     ]);
+
+  angular
+    .module('inspScreenApp')
+      .config(['$httpProvider', function($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+      }])
 })();

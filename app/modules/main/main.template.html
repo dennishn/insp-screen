@@ -1,8 +1,10 @@
-<ul>
-  <li ng-repeat="feedItem in vm.images">
-    {{feedItem}}
-
-  </li>
-  <!-- {{vm.feedsList[0].entries}} -->
-</ul>
-
+<div class="row grid-content">
+  <ul class="small-block-grid-2 medium-block-grid-4 large-block-grid-6" masonry masonry-options="{ transitionDuration: '0s' }">
+    <li
+      ng-repeat="feed in vm.feeds"
+      class="masonry-brick feed-item"
+    >
+      <img ng-src="{{feed.src}}" alt="">
+    </li>
+  </ul>
+</div>

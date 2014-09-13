@@ -1,0 +1,31 @@
+$max-items: 50;
+
+.feed-item {
+  position: relative;
+  min-height: 200px;
+  img {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+    transition: .2s ease-out;
+  }
+  &.loaded {
+    min-height: 0;
+    img {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+@for $i from 1 through $max-items {
+  .feed-item:nth-child(#{$i}) {
+    img {
+      transition-delay: (0.1s * $i);
+    }
+  }
+}
+
+
+// Layout overrides
+[class*="block-grid"] .feed-item {
+  padding: 0;
+}
