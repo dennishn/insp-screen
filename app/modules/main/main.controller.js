@@ -16,7 +16,6 @@
   function Main(Kimono, Dribbble, $q, $interval, uuid) {
     var vm = this;
 
-    var feedsToShow = 50;
     var poll;
 
     $q.all([Kimono.get(), Dribbble.get()]).then(function(results) {
@@ -26,17 +25,11 @@
 
       vm.feeds = createFeeds(dribbbles, kimonos);
 
-      // Udkommenteret indtil løsning for at tilføje kun nye feeds er fundet
-      var poll = $interval(pollForFeeds, 10000);
+      var poll = $interval(pollForFeeds, 300000);
     });
 
-    function pollForFeeds() {
-      // Ide:
-      // Poll API'er, kontroller om emne findes i array, er emne nyt,
-      // fjern sidste feed i feeds. Er emne ikke nyt gøres intet.
+    var pollForFeeds = function() {
 
-      // Ønsket resultat:
-      // pollForFeeds skal tilføje feed til feeds, og sørge for feeds ikke overskrider feedsToShow
       $q.all([Kimono.get(), Dribbble.get()]).then(function(results) {
 
         var kimonos = results[0].results.collection1;
@@ -58,14 +51,14 @@
       };
       if(kimonos && kimonos.length > 0) {
         angular.forEach(kimonos, function(kimono, index) {
-          var feed = {};
-          angular.extend(feed, baseFeed);
+            var feed = {};
+            angular.extend(feed, baseFeed);
 
-          feed.id       = uuid.newuuid();
-          feed.src      = kimono.item;
-          feed.resource = kimono.api;
-          feed.created  = new Date();
-          feeds.push(feed);
+            feed.id       = uuid.newuuid();
+            feed.src      = kimono.item;
+            feed.resource = "Kimono",
+            feed.created  = new Date();
+            feeds.push(feed);
         });
       }
       if(dribbbles && dribbbles.length > 0) {
@@ -82,6 +75,21 @@
       }
 
       return feeds;
+    }
+
+    var shuffleArray = function(array) {
+      var m = array.length, t, i;
+
+      while (m) {
+
+        i = Math.floor(Math.random() * m--);
+
+        t = array[m];
+        array[m] = array[i];
+        array[i] = t;
+      }
+
+      return array;
     }
   }
 })();

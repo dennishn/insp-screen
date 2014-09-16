@@ -121,9 +121,9 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 3010,
         hostname: '0.0.0.0',
-        livereload: 35729
+        livereload: 35730
       },
       livereload: {
         options: {
@@ -196,9 +196,6 @@ module.exports = function (grunt) {
 
     // Automatically inject Bower components into the app
     wiredep: {
-      options: {
-        cwd: '<%= yeoman.app %>'
-      },
       app: {
         src: ['<%= yeoman.app %>/index.html'],
         ignorePath:  /\.\.\//
@@ -367,7 +364,7 @@ module.exports = function (grunt) {
     pageres: {
       app: {
         options: {
-          url: '127.0.0.1:9000',
+          url: '127.0.0.1:3010',
           sizes: ['1280x960', '1024x768', '640x480', '320x480'],
           dest: ['screenshots', 'styleguide']
         }

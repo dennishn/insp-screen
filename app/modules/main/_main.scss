@@ -3,8 +3,14 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  background: #fe496c;
 }
-
+body {
+  background-image: url(../assets/images/nodes_white.svg);
+  background-position: center center;
+  background-size: 140px 134px;
+  background-repeat: no-repeat;
+}
 
 .grid-content {
   max-width: none;

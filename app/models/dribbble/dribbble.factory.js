@@ -14,7 +14,7 @@
   // DribbbleFactory.$inject = ['$resource'];
 
   function DribbbleFactory($resource) {
-    return $resource('http://api.dribbble.com/shots/everyone?callback',
+    return $resource('http://api.dribbble.com/shots/everyone?per_page=21&callback',
       { callback: 'JSON_CALLBACK' },
       {
         fetch: {
